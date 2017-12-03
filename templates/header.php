@@ -68,7 +68,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Inventory
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">View Inventory</a></li>
+                      <li><a href="../public/view_inventory.php">View Inventory</a></li>
                       <li><a href="#">Update Inventory</a></li>
                     </ul>
                   </li>
@@ -77,7 +77,7 @@
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="../public/supply_new.php">Supply a Product</a></li>
-                      <li><a href="#">View History</a></li>
+                      <li><a href="../public/supply_history.php">View History</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -100,9 +100,9 @@
 
 
     <div class="container-fluid">
-        <div class="row item_section">
+        <div class="row ">
           <div class="col-md-3"></div>
-          <div class="col-md-6">
+          <div class="col-md-6 item_section">
 
 
           

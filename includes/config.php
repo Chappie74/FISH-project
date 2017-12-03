@@ -19,7 +19,6 @@
 
     // enable sessions
     session_start();
-
     // require authentication for most pages
     if (!preg_match("{(?:login|logout)\.php$}", $_SERVER["PHP_SELF"]))
     {

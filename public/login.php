@@ -22,6 +22,7 @@
 			$success = query($sql, $first_name, $last_name, $email, $address, $telephone, $rows[0]["id"]);
 			
 			$_SESSION["id"] = $rows[0]["id"];
+			$_SESSION["account_type"] = $account_type;	
 			redirect("index.php");
 		}
 		else
@@ -42,6 +43,7 @@
 			$sql = "INSERT INTO suppliers (address,person_of_contact,email,telephone_number,business_name,user_id) VALUES(?,?,?,?,?,?);";
 			$success = query($sql, $address, $person_of_contact, $email, $telephone, $business_name, $rows[0]["id"]);
 			$_SESSION["id"] = $rows[0]["id"];
+			$_SESSION["account_type"] = $account_type;	
 			redirect("index.php");
 
 		}
@@ -57,11 +59,12 @@
 		$rows = query($sql, $username, crypt($password,$salt), $account_type);
 		if(empty($rows))
 		{
-			apologize("Could not find a user matching the information supplied.");
+			apologize("Could not find user with that username and correspoinding password and account type.");
 		}
 		
 		if($rows != [])
 		{
+			
 			$_SESSION["id"] = $rows[0]["user_id"];	
 			$_SESSION["account_type"] = $account_type;		
 			redirect("index.php");
