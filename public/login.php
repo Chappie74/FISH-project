@@ -62,7 +62,8 @@
 		
 		if($rows != [])
 		{
-			$_SESSION["id"] = $rows[0]["user_id"];
+			$_SESSION["id"] = $rows[0]["user_id"];	
+			$_SESSION["account_type"] = $account_type;		
 			redirect("index.php");
 		}
 		apologize("Could not find a Username with the correspoinding password in the database. Consider signing up.");

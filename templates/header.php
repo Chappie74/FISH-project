@@ -54,13 +54,44 @@
                   <li class="active"><a href="#">Home</a></li>
 
                   
-                <li><a href="#">Page1</a></li>
-                  <li><a href="#">Page2</a></li>
-                  <li><a href="">Page3</a></li>
-
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Products
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Sell</a></li>
+                      <li><a href="#">Buy</a></li>
+                      <li><a href="#">Edit</a></li>
+                      <li><a href="#">History</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Inventory
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">View Inventory</a></li>
+                      <li><a href="#">Update Inventory</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Supply
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="../public/supply_new.php">Supply a Product</a></li>
+                      <li><a href="#">View History</a></li>
+                    </ul>
+                  </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">   
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="">User
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Edit Users</a></li>
+                      <li><a href="#">Add new</a></li>
+                    </ul>
+                  </li>
+
                   <li><a href="../public/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>                
                 </ul>
               </div>
@@ -69,6 +100,9 @@
 
 
     <div class="container-fluid">
-        <div class="row">
+        <div class="row item_section">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+
 
           
