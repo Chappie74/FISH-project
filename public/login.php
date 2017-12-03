@@ -43,7 +43,7 @@
 			$sql = "INSERT INTO suppliers (address,person_of_contact,email,telephone_number,business_name,user_id) VALUES(?,?,?,?,?,?);";
 			$success = query($sql, $address, $person_of_contact, $email, $telephone, $business_name, $rows[0]["id"]);
 			$_SESSION["id"] = $rows[0]["id"];
-			$_SESSION["account_type"] = $account_type;	
+			$_SESSION["account_type"] = $account_type;		
 			redirect("index.php");
 
 		}
@@ -66,7 +66,7 @@
 		{
 			
 			$_SESSION["id"] = $rows[0]["user_id"];	
-			$_SESSION["account_type"] = $account_type;		
+			$_SESSION["account_type"] = $rows[0]["account_type"];		
 			redirect("index.php");
 		}
 		apologize("Could not find a Username with the correspoinding password in the database. Consider signing up.");

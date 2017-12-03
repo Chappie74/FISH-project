@@ -1,6 +1,6 @@
 <?php 
 	require("../includes/config.php");
-	if($_SESSION["account_type"] == "admin" || $_SESSION["account_type"] == "clerk" )
+	if($_SESSION["account_type"] == "admin" )
 	{	
 		if(isset($_GET["inventory_id"]))
 		{

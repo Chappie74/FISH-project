@@ -19,9 +19,10 @@
           <td><?php echo $item["quantity"];?></td>
           <?php if( $_SESSION["account_type"] == "admin" || $_SESSION["account_type"] == "clerk"): ?>
             <td>
-                <a href="<?php echo "../public/view_inventory.php?inventory_id=".$item["inventory_id"] ;?>">Edit</a> |
-                <a href="<?php echo "../public/supply_history.php?inventory_id=".$item["inventory_id"] ;?>">Delete</a>
-                
+                <a href="<?php echo "../public/update_inventory.php?inventory_id=".$item["inventory_id"] ;?>">Edit</a> |
+                <?php if($_SESSION["account_type"] == "admin"): ?>
+                  <a href="<?php echo "../public/view_inventory.php?inventory_id=".$item["inventory_id"] ;?>">Delete</a>
+                <?php endif;?>
             </td>
 
           <?php endif; ?>  

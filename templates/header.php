@@ -51,7 +51,7 @@
                   <a class="navbar-brand" href="../public/index.php">Dashboard</a>
                 </div>
                 <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Home</a></li>
 
                   
                   <li class="dropdown">
@@ -64,14 +64,7 @@
                       <li><a href="#">History</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Inventory
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="../public/view_inventory.php">View Inventory</a></li>
-                      <li><a href="#">Update Inventory</a></li>
-                    </ul>
-                  </li>
+                  <li><a href="../public/view_inventory.php">Inventory</a></li>
                   <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Supply
                     <span class="caret"></span></a>
@@ -87,8 +80,8 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">User
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">Edit Users</a></li>
-                      <li><a href="#">Add new</a></li>
+                      <li><a href="../public/view_users.php">View Users</a></li>
+                      <li><a href="../public/add_user.php">Add new</a></li>
                     </ul>
                   </li>
 
