@@ -19,7 +19,7 @@
 	    </thead>
 	    <tbody>
 	      <?php foreach ($items as $item): ?>
-	      	<form method="POST" action="#">
+	      	<form method="POST" action="../public/sell.php">
 	        <tr>	          
 	          <td><?php echo $item["name"];?></td>
 	          <input type="hidden" name="name" value="<?php echo $item["name"];?>">

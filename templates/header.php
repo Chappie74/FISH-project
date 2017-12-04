@@ -55,45 +55,60 @@
 
                   
                   <li class="dropdown">
+                    <?php if($_SESSION["account_type"] != "supplier"): ?>
                     <a class="dropdown-toggle" data-toggle="dropdown" href="">Products
+                    
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="../public/sell.php">Sell</a></li>
-                      <?php if($_SESSION["account_type"] == "customer"):?>
-                        <li><a href="#">Buy</a></li>
+                      <?php if($_SESSION["account_type"] == "admin" || $_SESSION["account_type"] == "clerk"):?>
+                        <li><a href="../public/sell.php">Sell</a></li>
                       <?php endif;?>
+
+                      <?php if($_SESSION["account_type"] == "customer"):?>
+                        <li><a href="../public/buy.php">Purchase</a></li>
+                      <?php endif;?>
+
                       <?php if($_SESSION["account_type"] == "supplier" || $_SESSION["account_type"] == "admin" || $_SESSION["account_type"] == "clerk"):?>
-                      <li><a href="../public/view_products.php">View All</a></li>
-                    <?php endif;?>
-                      <li><a href="#">History</a></li>
+                        <li><a href="../public/view_products.php">View All</a></li>
+                      <?php endif;?>
+
+                      <?php if($_SESSION["account_type"] == "admin" || $_SESSION["account_type"] == "clerk" || $_SESSION["account_type"] == "customer" || $_SESSION["account_type"] == "cashier"):?>
+                        <li><a href="../public/products_history.php">History</a></li>
+                      <?php endif;?>
                     </ul>
+                    <?php endif; ?>
                   </li>
-                  <li><a href="../public/view_inventory.php">Inventory</a></li>
+
+                  <?php if($_SESSION["account_type"] == "admin" || $_SESSION["account_type"] == "clerk"): ?>
+                    <li><a href="../public/view_inventory.php">Inventory</a></li>
+                  <?php endif;?>
+
                   <?php if($_SESSION["account_type"] == "supplier" || $_SESSION["account_type"] == "admin" || $_SESSION["account_type"] == "clerk"):?>
-                  <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">Supply
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <?php if($_SESSION["account_type"] == "supplier"): ?>
-                      <li><a href="../public/supply_new.php">Supply a Product</a></li>
-                      <?php endif; ?>
-                      <li><a href="../public/supply_history.php">View History</a></li>
-                    </ul>
+                    <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="">Supply
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <?php if($_SESSION["account_type"] == "supplier"): ?>
+                        <li><a href="../public/supply_new.php">Supply a Product</a></li>
+                        <?php endif; ?>
+                        <li><a href="../public/supply_history.php">View History</a></li>
+                      </ul>
                   </li>
                 <?php endif;?>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">   
+                  <li><a>Welcome <?php echo $_SESSION["account_type"]."!" ?></a></li>
                  <?php if($_SESSION["account_type"] == "admin"):?>
-                  <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">User
-                    <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="../public/view_users.php">View Users</a></li>
-                      <li><a href="../public/add_user.php">Add new</a></li>
-                    </ul>
-                  </li>
-                <?php endif; ?>
+                    <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="">User
+                      <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="../public/view_users.php">View Users</a></li>
+                        <li><a href="../public/add_user.php">Add new</a></li>
+                      </ul>
+                    </li>
+                  <?php endif; ?>
 
                   <li><a href="../public/logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>                
                 </ul>

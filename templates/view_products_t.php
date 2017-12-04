@@ -1,4 +1,4 @@
-<h1 class="text-center">Products Listed</h1><br>
+<h1 class="text-center">Products Listed for Sale</h1><br>
 
 <?php if($_SESSION["account_type"] == "admin" ||$_SESSION["account_type"] == "clerk" || $_SESSION["account_type"] == "cashier"): ?>
 <table class="table table-bordered table-hover">
