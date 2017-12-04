@@ -13,7 +13,9 @@
         <tr>          
           <td><?php echo $item["email"];?></td>          
           <td><?php echo $item["account_type"];?></td>  
-          <td><a href="../public/view_users.php?user_id="<?php echo $item["user_id"] ?>">Delete</a></td> 
+          <?php if($item["account_type"] == "admin" || $item["account_type"] == "clerk" || $item["account_type"] == "cashier"): ?>
+            <td><a href="../public/view_users.php?user_id=<?php echo $item["user_id"] ?>">Delete</a></td> 
+          <?php endif; ?>
         </tr>  
       <?php endforeach;?>    
     </tbody>

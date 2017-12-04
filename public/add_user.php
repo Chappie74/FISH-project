@@ -7,7 +7,7 @@
 		$email = $_POST["email"];
 		$password = $_POST["email"];
 		$account_type = $_POST["account_type"];
-		$success = query("INSERT INTO users email, password, account_type VALUES (?,?,?)", $email, $crypt($password, $salt), $account_type);
+		$success = query("INSERT INTO users (email, password, account_type) VALUES (?,?,?);", $email, crypt($password, $salt), $account_type);
 		redirect("view_users.php");
 	}
 	else if ($_SESSION["account_type"] == "admin")

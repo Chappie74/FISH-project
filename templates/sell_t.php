@@ -14,6 +14,7 @@
 	        <th>Type</th>
 	        <th>Amount</th>
 	        <th>Price</th>
+	        <th>Description</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -25,14 +26,21 @@
 	          <td><?php echo $item["brand"];?></td>
 	          <input type="hidden" name="brand" value="<?php echo $item["brand"];?>">
 	          <td><?php echo $item["type"];?></td>
-	          <input type="hidden" name="type" value="<?php echo $item["type"];?>">	            
+	          <input type="hidden" name="type" value="<?php echo $item["type"];?>">	  
+	          <input type="hidden" name="invent_id" value="<?php echo $item["inventory_id"];?>">	          
 	          <td>
 	          	<input type="number" min="1" max="<?php echo $item["quantity"]?>" required name="amount">
-	          	<span><?php echo $item["quantity"]." in inventory"?></span>
+	          	<span><?php echo $item["quantity"]." in stock"?></span>
 	          </td>
-	          <td><input type="number" required name="price"></td>	
-	          <td><button type="submit" class="btn btn-sm btn-primary">Sell</button></td>          
+	          <td><input type="number" required min = "1" name="price"></td>	
+	          <td><textarea requried rows="3" cols="8" wrap name = "description" maxlength="200" style="resize: none; font-size: 10px"></textarea></td>
+	          <?php if($item["quantity"] != 0): ?>
+	          <td><button type="submit" class="btn btn-sm btn-primary">Sell</button></td>
+	          <?php else:?>
+	          <td>OUT OF STOCK!</td>
+	          <?php endif;?>          
 	        </tr>
+	        
 	        </form>  
 	      <?php endforeach;?>    
 	    </tbody>
